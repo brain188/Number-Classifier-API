@@ -21,7 +21,7 @@ def is_armstrong(n):
 def get_fun_fact(n):
     import requests
     try:
-        response = requests.get(f"http://numbersapi.com/{n}")
+        response = requests.get(f"http://numbersapi.com/{n}/math", timeout=2)
         return response.text if response.status_code == 200 else "No fact available"
     except requests.exceptions.RequestException:
         return "No fact Available"
